@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PacketRacer;
 
 public class DragObject : MonoBehaviour
 {
@@ -17,23 +18,29 @@ public class DragObject : MonoBehaviour
 
     void OnMouseDown()
     {
-        mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
+        if (Tools.selectedTool == 0)
+        {
+            mZCoord = Camera.main.WorldToScreenPoint(gameObject.transform.position).z;
 
-        // Store offset = gameobject world pos - mouse world pos
-        mOffset = gameObject.transform.position - GetMouseWorldPos();
+            // Store offset = gameobject world pos - mouse world pos
+            mOffset = gameObject.transform.position - GetMouseWorldPos();
 
-        scrollSinceDrag = 0.0f;
+            scrollSinceDrag = 0.0f;
+        }
     }
 
     void OnMouseDrag()
     {
-        scrollSinceDrag += Input.GetAxis("Mouse ScrollWheel");
+        if (Tools.selectedTool == 0)
+        {
+            scrollSinceDrag += Input.GetAxis("Mouse ScrollWheel");
 
-        // Get camera's angle
-        Vector3 cameraDirection = mainCamera.transform.forward;
+            // Get camera's angle
+            Vector3 cameraDirection = mainCamera.transform.forward;
 
-        transform.position = GetMouseWorldPos() + mOffset;
-        transform.position += cameraDirection * scrollSinceDrag;
+            transform.position = GetMouseWorldPos() + mOffset;
+            transform.position += cameraDirection * scrollSinceDrag;
+        }
     }
 
     Vector3 GetMouseWorldPos()

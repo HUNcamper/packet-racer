@@ -1,12 +1,18 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using PacketRacer;
 
 public class Cable : MonoBehaviour
 {
+    // Cable draw stuff
     public GameObject startObject;
     public GameObject endObject;
     LineRenderer lr;
+
+    /// Stack of packets
+    // First always has the top priority of being forwarded.
+    Stack<Packet> packet_stack = new Stack<Packet>();
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +23,7 @@ public class Cable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Draw the cable
         Vector3 startPos = startObject.transform.position;
         Vector3 endPos = endObject.transform.position;
 

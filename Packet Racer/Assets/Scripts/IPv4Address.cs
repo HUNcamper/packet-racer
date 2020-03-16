@@ -5,6 +5,13 @@ using UnityEngine;
 
 namespace PacketRacer
 {
+    public struct IPv4InterfacePair
+    {
+        public IPv4Address network;
+        public IPv4Address netMask;
+        public string interfaceName;
+    }
+
     public class IPv4Address
     {
         private byte[] octets;

@@ -1030,8 +1030,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3832609846529821661, guid: 2e5dad6c0d112c84180ae2fadf566a05,
         type: 3}
+      propertyPath: basicRoutingTableString.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832609846529821661, guid: 2e5dad6c0d112c84180ae2fadf566a05,
+        type: 3}
+      propertyPath: routingTableString.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832609846529821661, guid: 2e5dad6c0d112c84180ae2fadf566a05,
+        type: 3}
       propertyPath: displayName
       value: Router 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832609846529821661, guid: 2e5dad6c0d112c84180ae2fadf566a05,
+        type: 3}
+      propertyPath: basicRoutingTableString.Array.data[0]
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e5dad6c0d112c84180ae2fadf566a05, type: 3}

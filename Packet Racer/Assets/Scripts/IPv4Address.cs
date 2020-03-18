@@ -26,6 +26,18 @@ namespace PacketRacer
             octets = IPStringToOctets(ipv4);
         }
 
+        public override string ToString()
+        {
+            string[] octetString = new string[4];
+
+            for (int i = 0; i < octetString.Length; i++)
+            {
+                octetString[i] = octets[i].ToString();
+            }
+
+            return String.Join(".", octets);
+        }
+
         public static byte[] IPStringToOctets(string ipv4, char separator = '.')
         {
             byte[] new_octets = new byte[4];
@@ -45,8 +57,7 @@ namespace PacketRacer
                 }
                 catch
                 {
-                    Debug.LogError("IPv4 error: octet '{0}' is more than one byte");
-                    return null;
+                    throw new IPv4Exception(String.Format("IPv4 error: octet '{0}' is more than one byte", octet_str));
                 }
             }
 

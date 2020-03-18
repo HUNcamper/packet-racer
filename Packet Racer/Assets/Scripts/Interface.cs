@@ -7,7 +7,7 @@ namespace PacketRacer
 {
     public class NetInterface
     {
-        public GameObject parent;
+        public IDevice parentDevice;
         private string type;
         private int num;
         private bool state;
@@ -16,9 +16,9 @@ namespace PacketRacer
         private MACAddress mac;
         private IPv4Address address_ipv4;
 
-        public NetInterface(GameObject parentObj, int intNum, string intType = "g")
+        public NetInterface(IDevice device, int intNum, string intType = "g")
         {
-            parent = parentObj;
+            parentDevice = device;
             type = intType;
             num = intNum;
             state = false;
@@ -36,14 +36,24 @@ namespace PacketRacer
             return state;
         }
 
-        public void SetIPaddress(string ip)
+        public IPv4Address GetIPAddress()
+        {
+            return address_ipv4;
+        }
+
+        public void SetIPAddress(string ip)
         {
             address_ipv4 = new IPv4Address(ip);
         }
 
-        public void SendPingPacket(Packet packet)
+        public void SendPacket(Packet packet)
         {
-            
+            cable.HandlePacket(this);
+        }
+
+        public void ReceivePacket(Packet packet)
+        {
+            parentDevice.ReceivePacket(packet);
         }
     }
 }

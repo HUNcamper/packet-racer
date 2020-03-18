@@ -21,8 +21,6 @@ namespace PacketRacer
         {
 
         }
-
-
     }
     public class IPv4InterfaceException : Exception
     {
@@ -40,7 +38,5 @@ namespace PacketRacer
         {
 
         }
-
-        
     }
 }

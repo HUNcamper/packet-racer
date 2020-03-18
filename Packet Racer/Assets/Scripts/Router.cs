@@ -5,7 +5,7 @@ using PacketRacer;
 using TMPro;
 using System;
 
-public class Router : MonoBehaviour
+public class Router : MonoBehaviour, IDevice
 {
     public TextMeshPro labelName;
 
@@ -36,7 +36,7 @@ public class Router : MonoBehaviour
         {
             NetInterface interfacetemp = new NetInterface(gameObject, counter);
 
-            interfacetemp.SetIPaddress(item);
+            interfacetemp.SetIPAddress(item);
 
             interfaceList.Add(interfacetemp);
             counter++;
@@ -62,22 +62,21 @@ public class Router : MonoBehaviour
                 network = new IPv4Address(line[0]);
                 netmask = new IPv4Address(line[1]);
                 intName = line[2];
-            }
-            catch(IPv4Exception e)
-            {
-                Debug.LogError(String.Format("Error reading routing table line: '{0}'", routingTableString[i]));
-                Debug.LogError(e.ToString());
-            }
-            catch (IPv4InterfaceException e2)
-            {
-
-            }
-            finally
-            {
+                
                 IPv4InterfacePair pair = new IPv4InterfacePair();
                 pair.network = network;
                 pair.netMask = netmask;
                 pair.interfaceName = intName;
+            }
+            catch(IPv4Exception e)
+            {
+                Debug.LogError(String.Format("IPv4 error reading routing table line: '{0}'", routingTableString[i]));
+                Debug.LogError(e.ToString());
+            }
+            catch (IPv4InterfaceException e)
+            {
+                Debug.LogError(String.Format("InterfacePair error reading routing table line: '{0}'", routingTableString[i]));
+                Debug.LogError(e.ToString());
             }
         }
     }
@@ -94,14 +93,13 @@ public class Router : MonoBehaviour
         labelName.transform.LookAt(mainCamera.transform.position);
     }
 
-    public void HandlePacket(Packet packet)
+    public void SendPacket(Packet packet)
     {
 
     }
 
-    public GameObject GetGameObject()
+    public void ReceivePacket(Packet packet)
     {
-        return gameObject;
-    }
 
+    }
 }

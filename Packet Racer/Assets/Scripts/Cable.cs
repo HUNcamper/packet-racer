@@ -12,6 +12,8 @@ public class Cable : MonoBehaviour
     private NetInterface startInterface;
 
     private NetInterface endInterface;
+
+    // For rendering the cable in 3D
     LineRenderer lr;
 
     /// Stack of packets
@@ -21,17 +23,18 @@ public class Cable : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        lr = GetComponent<LineRenderer>();
         startInterface = startRouter.interfaceList[0];
         endInterface = endRouter.interfaceList[0];
+
+        lr = GetComponent<LineRenderer>();
     }
 
     // Update is called once per frame
     void Update()
     {
         // Draw the cable
-        Vector3 startPos = startRouter.GetGameObject().transform.position;
-        Vector3 endPos = endRouter.GetGameObject().transform.position;
+        Vector3 startPos = startRouter.gameObject.transform.position;
+        Vector3 endPos = endRouter.gameObject.transform.position;
 
         lr.positionCount = 2;
         lr.SetPosition(0, startPos);
@@ -39,8 +42,15 @@ public class Cable : MonoBehaviour
         lr.useWorldSpace = true;
     }
 
-    public void ProcessPacket(GameObject gameObject)
+    public void HandlePacket(NetInterface sourceInterface, Packet packet)
     {
-
+        if (sourceInterface == startInterface)
+        {
+            endInterface.ReceivePacket(packet);
+        }
+        else
+        {
+            endInterface.ReceivePacket(packet);
+        }
     }
 }

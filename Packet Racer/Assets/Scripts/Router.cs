@@ -14,7 +14,8 @@ public class Router : MonoBehaviour, IDevice
     // Device's display name
     public string displayName = "router";
 
-    public List<string> interfacelistiplist = new List<string>();
+    // List of string based IPs as interfaces
+    public List<string> interfaceIpList = new List<string>();
 
     // List of interfaces on the device
     public List<NetInterface> interfaceList = new List<NetInterface>();
@@ -32,16 +33,16 @@ public class Router : MonoBehaviour, IDevice
         
         int counter = 0;
 
-        foreach (string item in interfacelistiplist)
+        foreach (string item in interfaceIpList)
         {
-            NetInterface interfacetemp = new NetInterface(gameObject, counter);
+            Debug.Log("Processing " + item);
+            NetInterface interfaceTemp = new NetInterface(this, counter);
 
-            interfacetemp.SetIPAddress(item);
+            interfaceTemp.SetIPAddress(item);
 
-            interfaceList.Add(interfacetemp);
+            interfaceList.Add(interfaceTemp);
             counter++;
         }
-        
     }
 
     /// <summary>
@@ -53,8 +54,8 @@ public class Router : MonoBehaviour, IDevice
         for (int i = 0; i < routingTableString.Count; i++)
         {
             string[] line = routingTableString[i].Split(';');
-            IPv4Address network = null;
-            IPv4Address netmask = null;
+            IPv4Address network;
+            IPv4Address netmask;
             string intName = "";
 
             try
@@ -90,16 +91,45 @@ public class Router : MonoBehaviour, IDevice
     // Update is called once per frame
     void Update()
     {
+        // Rotate the label towards the camera
         labelName.transform.LookAt(mainCamera.transform.position);
+    }
+
+    public void SendPingPacket(string ip)
+    {
+        NetInterface firstInterface = interfaceList[0];
+
+        // Assemble ping packet
+        IPv4Address dest = new IPv4Address(ip);
+        Packet newPacket = new Packet(firstInterface.GetIPAddress(), dest, "ping");
+
+        SendPacket(newPacket);
     }
 
     public void SendPacket(Packet packet)
     {
+        NetInterface firstInterface = interfaceList[0];
 
+        // Finally send the packet to the interface
+        firstInterface.SendPacket(packet);
     }
 
-    public void ReceivePacket(Packet packet)
+    public void ReceivePacket(NetInterface sourceInterface, Packet packet)
     {
+        IPv4Address interfaceIP = sourceInterface.GetIPAddress();
 
+        if (packet.message == "ping")
+        {
+            // Assemble pong packet
+            IPv4Address dest = packet.source_ipv4;
+            Packet newPacket = new Packet(interfaceIP, dest, "pong");
+
+            // Finally send the packet to the interface
+            sourceInterface.SendPacket(newPacket);
+        }
+        else if (packet.message == "pong")
+        {
+            Debug.Log(String.Format("[{0}]SUCCESS! Received pong packet from {1}", interfaceIP, packet.source_ipv4));
+        }
     }
 }

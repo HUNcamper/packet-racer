@@ -48,12 +48,12 @@ namespace PacketRacer
 
         public void SendPacket(Packet packet)
         {
-            cable.HandlePacket(this);
+            cable.HandlePacket(this, packet);
         }
 
         public void ReceivePacket(Packet packet)
         {
-            parentDevice.ReceivePacket(packet);
+            parentDevice.ReceivePacket(this, packet);
         }
     }
 }

@@ -467,7 +467,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 532358246}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.46, y: 3.48, z: 0.99}
+  m_LocalPosition: {x: -9.22, y: 11.12, z: 0.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1039,6 +1039,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3832609846529821661, guid: 2e5dad6c0d112c84180ae2fadf566a05,
         type: 3}
+      propertyPath: interfaceIpList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832609846529821661, guid: 2e5dad6c0d112c84180ae2fadf566a05,
+        type: 3}
       propertyPath: displayName
       value: Router 2
       objectReference: {fileID: 0}
@@ -1050,6 +1055,11 @@ PrefabInstance:
     - target: {fileID: 3832609846529821661, guid: 2e5dad6c0d112c84180ae2fadf566a05,
         type: 3}
       propertyPath: interfacelistiplist.Array.data[0]
+      value: 192.168.1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832609846529821661, guid: 2e5dad6c0d112c84180ae2fadf566a05,
+        type: 3}
+      propertyPath: interfaceIpList.Array.data[0]
       value: 192.168.1.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -2335,7 +2345,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3832609846529821661, guid: 2e5dad6c0d112c84180ae2fadf566a05,
         type: 3}
+      propertyPath: interfaceIpList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832609846529821661, guid: 2e5dad6c0d112c84180ae2fadf566a05,
+        type: 3}
       propertyPath: ipv4Address
+      value: 192.168.0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832609846529821661, guid: 2e5dad6c0d112c84180ae2fadf566a05,
+        type: 3}
+      propertyPath: interfaceIpList.Array.data[0]
       value: 192.168.0.1
       objectReference: {fileID: 0}
     m_RemovedComponents: []

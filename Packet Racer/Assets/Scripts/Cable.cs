@@ -5,12 +5,10 @@ using PacketRacer;
 
 public class Cable : MonoBehaviour
 {
-    // Cable draw stuff
     public Router startRouter;
     public Router endRouter;
 
     private NetInterface startInterface;
-
     private NetInterface endInterface;
 
     // For rendering the cable in 3D
@@ -18,6 +16,7 @@ public class Cable : MonoBehaviour
 
     /// Stack of packets
     // First always has the top priority of being forwarded.
+    // TODO
     Stack<Packet> packet_stack = new Stack<Packet>();
 
     // Start is called before the first frame update
@@ -50,7 +49,7 @@ public class Cable : MonoBehaviour
         }
         else
         {
-            endInterface.ReceivePacket(packet);
+            startInterface.ReceivePacket(packet);
         }
     }
 }

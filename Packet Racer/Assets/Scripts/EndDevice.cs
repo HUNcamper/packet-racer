@@ -6,10 +6,9 @@ using PacketRacer;
 public class EndDevice : MonoBehaviour, IDevice
 {
     private NetInterface netInterface;
-
     private IPv4Address defaultDevice;
 
-    public void ReceivePacket(Packet packet)
+    public void ReceivePacket(NetInterface sourceInterface, Packet packet)
     {
         throw new System.NotImplementedException();
     }
@@ -29,5 +28,4 @@ public class EndDevice : MonoBehaviour, IDevice
 
         netInterface.SendPacket(new Packet(source, destination));
     }
-
 }

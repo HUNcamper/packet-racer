@@ -6,7 +6,7 @@ namespace PacketRacer
 {
     public interface IDevice
     {
-        public void SendPacket(Packet packet);
-        public void ReceivePacket(Packet packet);
+        void SendPacket(Packet packet);
+        void ReceivePacket(NetInterface sourceInterface, Packet packet);
     }
 }

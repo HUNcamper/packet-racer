@@ -7,7 +7,7 @@ using System.Text;
 
 namespace PacketRacer
 {
-    public class MACAddress : MonoBehaviour
+    public class MACAddress
     {
         private string address;
         

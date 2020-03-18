@@ -30,7 +30,7 @@ namespace PacketRacer
         {
             byte[] new_octets = new byte[4];
 
-            // Splice the ipv4 string
+            // Slice the ipv4 string
             string[] ip_split = ipv4.Split(separator);
 
             // Has to have exactly 4 octets

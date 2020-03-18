@@ -13,12 +13,17 @@ namespace PacketRacer
         private bool state;
         Cable cable;
 
-        public NetInterface(GameObject parentObj, string intType = "g", int intNum = 0)
+        private MACAddress mac;
+        private IPv4Address address_ipv4;
+
+        public NetInterface(GameObject parentObj, int intNum, string intType = "g")
         {
             parent = parentObj;
             type = intType;
             num = intNum;
             state = false;
+            mac = new MACAddress();
+            address_ipv4 = new IPv4Address("0.0.0.0");
         }
 
         public string GetName()
@@ -29,6 +34,16 @@ namespace PacketRacer
         public bool GetState()
         {
             return state;
+        }
+
+        public void SetIPaddress(string ip)
+        {
+            address_ipv4 = new IPv4Address(ip);
+        }
+
+        public void SendPingPacket(Packet packet)
+        {
+            
         }
     }
 }

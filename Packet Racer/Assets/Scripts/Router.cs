@@ -11,17 +11,13 @@ public class Router : MonoBehaviour
 
     public List<string> routingTableString = new List<string>();
 
-    // String ipv4 address for editor set IP
-    public string ipv4AddressString = "0.0.0.0";
-
     // Device's display name
     public string displayName = "router";
 
-    // IPv4 Address of the device
-    private IPv4Address address_ipv4;
+    public List<string> interfacelistiplist = new List<string>();
 
     // List of interfaces on the device
-    private List<NetInterface> interfaceList = new List<NetInterface>();
+    public List<NetInterface> interfaceList = new List<NetInterface>();
 
     // Basic routing table
     private List<IPv4InterfacePair> basicRoutingTable = new List<IPv4InterfacePair>();
@@ -31,11 +27,21 @@ public class Router : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        interfaceList.Add(new NetInterface(gameObject));
         mainCamera = Camera.main;
         SetName(displayName);
+        
+        int counter = 0;
 
-        address_ipv4 = new IPv4Address(ipv4AddressString);
+        foreach (string item in interfacelistiplist)
+        {
+            NetInterface interfacetemp = new NetInterface(gameObject, counter);
+
+            interfacetemp.SetIPaddress(item);
+
+            interfaceList.Add(interfacetemp);
+            counter++;
+        }
+        
     }
 
     /// <summary>
@@ -57,12 +63,12 @@ public class Router : MonoBehaviour
                 netmask = new IPv4Address(line[1]);
                 intName = line[2];
             }
-            catch(Ipv4Exception e)
+            catch(IPv4Exception e)
             {
                 Debug.LogError(String.Format("Error reading routing table line: '{0}'", routingTableString[i]));
                 Debug.LogError(e.ToString());
             }
-            catch (Ipv4InterfaceException e2)
+            catch (IPv4InterfaceException e2)
             {
 
             }
@@ -92,4 +98,10 @@ public class Router : MonoBehaviour
     {
 
     }
+
+    public GameObject GetGameObject()
+    {
+        return gameObject;
+    }
+
 }

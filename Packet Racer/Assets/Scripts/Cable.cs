@@ -6,8 +6,12 @@ using PacketRacer;
 public class Cable : MonoBehaviour
 {
     // Cable draw stuff
-    public GameObject startObject;
-    public GameObject endObject;
+    public Router startRouter;
+    public Router endRouter;
+
+    private NetInterface startInterface;
+
+    private NetInterface endInterface;
     LineRenderer lr;
 
     /// Stack of packets
@@ -18,18 +22,25 @@ public class Cable : MonoBehaviour
     void Start()
     {
         lr = GetComponent<LineRenderer>();
+        startInterface = startRouter.interfaceList[0];
+        endInterface = endRouter.interfaceList[0];
     }
 
     // Update is called once per frame
     void Update()
     {
         // Draw the cable
-        Vector3 startPos = startObject.transform.position;
-        Vector3 endPos = endObject.transform.position;
+        Vector3 startPos = startRouter.GetGameObject().transform.position;
+        Vector3 endPos = endRouter.GetGameObject().transform.position;
 
         lr.positionCount = 2;
         lr.SetPosition(0, startPos);
         lr.SetPosition(1, endPos);
         lr.useWorldSpace = true;
+    }
+
+    public void ProcessPacket(GameObject gameObject)
+    {
+
     }
 }

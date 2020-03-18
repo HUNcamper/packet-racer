@@ -21,5 +21,26 @@ namespace PacketRacer
         {
 
         }
+
+
+    }
+    public class IPv4InterfaceException : Exception
+    {
+        public IPv4InterfaceException()
+        {
+            
+        }
+
+        public IPv4InterfaceException(string message) : base(message)
+        {
+
+        }
+
+        public IPv4InterfaceException(string message, Exception inner) : base(message, inner)
+        {
+
+        }
+
+        
     }
 }

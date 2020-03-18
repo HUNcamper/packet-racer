@@ -253,12 +253,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!1 &185359107 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3832609846529821655, guid: 2e5dad6c0d112c84180ae2fadf566a05,
-    type: 3}
-  m_PrefabInstance: {fileID: 3832609846681620692}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &261296216
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,8 +457,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48cb528af938ed24fa92e0e314ca3a1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startObject: {fileID: 185359107}
-  endObject: {fileID: 1116536558}
+  startRouter: {fileID: 0}
+  endRouter: {fileID: 0}
 --- !u!4 &532358248
 Transform:
   m_ObjectHideFlags: 0
@@ -1040,6 +1034,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3832609846529821661, guid: 2e5dad6c0d112c84180ae2fadf566a05,
         type: 3}
+      propertyPath: interfacelistiplist.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832609846529821661, guid: 2e5dad6c0d112c84180ae2fadf566a05,
+        type: 3}
       propertyPath: displayName
       value: Router 2
       objectReference: {fileID: 0}
@@ -1048,14 +1047,13 @@ PrefabInstance:
       propertyPath: basicRoutingTableString.Array.data[0]
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3832609846529821661, guid: 2e5dad6c0d112c84180ae2fadf566a05,
+        type: 3}
+      propertyPath: interfacelistiplist.Array.data[0]
+      value: 192.168.1.1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2e5dad6c0d112c84180ae2fadf566a05, type: 3}
---- !u!1 &1116536558 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 3832609846529821655, guid: 2e5dad6c0d112c84180ae2fadf566a05,
-    type: 3}
-  m_PrefabInstance: {fileID: 1116536557}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1120282855
 GameObject:
   m_ObjectHideFlags: 0

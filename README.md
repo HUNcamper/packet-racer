@@ -1,6 +1,5 @@
-# packet-racer
-Basic network simulation made in Unity.
-# Packet Racer
+# Packet Race
+> Basic network simulation made in Unity.
 
 ## What is it
 Packet Racer is a network simulation program such as "Cisco Packet Tracer".

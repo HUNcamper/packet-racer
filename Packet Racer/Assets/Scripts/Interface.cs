@@ -8,6 +8,7 @@ namespace PacketRacer
     public class NetInterface
     {
         public IDevice parentDevice;
+        public bool ready = false;
         private string type;
         private int num;
         private bool state;
@@ -24,6 +25,43 @@ namespace PacketRacer
             state = false;
             mac = new MACAddress();
             address_ipv4 = new IPv4Address("0.0.0.0");
+        }
+
+        public void Ready()
+        {
+            if (cable != null) cable.Ready();
+
+            ready = true;
+        }
+
+        /// <summary>
+        /// Cable initiated to connect
+        /// </summary>
+        /// <param name="newCable">Cable calling the connection</param>
+        public void CableConnected(Cable newCable)
+        {
+            if (cable == null)
+            {
+                cable = newCable;
+            }
+            else
+            {
+                // A cable is already connected, disconnect it
+                cable.InterfaceDisconnected(this);
+
+                // and connect the new one
+                cable = newCable;
+                cable.Ready();
+            }
+        }
+
+        /// <summary>
+        /// Cable initiated to disconnect
+        /// </summary>
+        /// <param name="newCable">Cable calling the disconnection</param>
+        public void CableDisconnected()
+        {
+            cable = null;
         }
 
         public string GetName()

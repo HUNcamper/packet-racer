@@ -20,6 +20,8 @@ public class Router : MonoBehaviour, IDevice
     // List of interfaces on the device
     public List<NetInterface> interfaceList = new List<NetInterface>();
 
+    public bool ready = false;
+
     // Basic routing table
     private List<IPv4InterfacePair> basicRoutingTable = new List<IPv4InterfacePair>();
 
@@ -43,6 +45,21 @@ public class Router : MonoBehaviour, IDevice
             interfaceList.Add(interfaceTemp);
             counter++;
         }
+
+        Ready();
+    }
+
+    /// <summary>
+    /// Done preparing the router
+    /// </summary>
+    public void Ready()
+    {
+        foreach (NetInterface netInterface in interfaceList)
+        {
+            netInterface.Ready();
+        }
+
+        ready = true;
     }
 
     /// <summary>

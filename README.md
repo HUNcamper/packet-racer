@@ -1,4 +1,4 @@
-# Packet Race
+# Packet Racer
 > Basic network simulation made in Unity.
 
 ## What is it

@@ -1111,7 +1111,9 @@ PrefabInstance:
       propertyPath: interfaceIpList.Array.data[0]
       value: 192.168.1.1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3832609846529821650, guid: 2e5dad6c0d112c84180ae2fadf566a05, type: 3}
+    - {fileID: 3832609846529821649, guid: 2e5dad6c0d112c84180ae2fadf566a05, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2e5dad6c0d112c84180ae2fadf566a05, type: 3}
 --- !u!114 &1116536558 stripped
 MonoBehaviour:
@@ -2332,6 +2334,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 3832609846529821649, guid: 2e5dad6c0d112c84180ae2fadf566a05,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3832609846529821650, guid: 2e5dad6c0d112c84180ae2fadf566a05,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 4300000, guid: f835ce66122be284d9a10b2b0446e74d, type: 3}
     - target: {fileID: 3832609846529821651, guid: 2e5dad6c0d112c84180ae2fadf566a05,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2387,6 +2399,11 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3832609846529821651, guid: 2e5dad6c0d112c84180ae2fadf566a05,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3832609846529821655, guid: 2e5dad6c0d112c84180ae2fadf566a05,
         type: 3}
       propertyPath: m_Name
@@ -2412,7 +2429,9 @@ PrefabInstance:
       propertyPath: interfaceIpList.Array.data[0]
       value: 192.168.0.1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 3832609846529821650, guid: 2e5dad6c0d112c84180ae2fadf566a05, type: 3}
+    - {fileID: 3832609846529821649, guid: 2e5dad6c0d112c84180ae2fadf566a05, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 2e5dad6c0d112c84180ae2fadf566a05, type: 3}
 --- !u!114 &3832609846681620693 stripped
 MonoBehaviour:

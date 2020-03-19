@@ -21,7 +21,7 @@ namespace PacketRacer
                 temp.Append(random.Next(0, 16).ToString("X"));
                 if (i % 2 == 0 && i != 12)
                 {
-                    temp.Append("-");
+                    temp.Append(":");
                 }
             }
             address = temp.ToString();

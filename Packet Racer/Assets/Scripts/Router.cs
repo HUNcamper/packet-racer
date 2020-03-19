@@ -57,6 +57,8 @@ public class Router : MonoBehaviour, IDevice
         foreach (NetInterface netInterface in interfaceList)
         {
             netInterface.Ready();
+
+            Debug.Log(String.Format("Set up interface for {0}", netInterface.GetIPAddress()));
         }
 
         ready = true;

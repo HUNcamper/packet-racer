@@ -17,5 +17,9 @@ As of right now "Unity" is required to run the program
  - Click on the project
 
 # What does it do
-Pacekt Racer aims to simulate a network in a 3D environment. 
+Packet Racer aims to simulate a network in a 3D environment. 
 The finished program will likely be able to handle multiple devices on screen while simulating realistic network behaviour of said devices. 
+
+# Documentation
+You can view the online documentation here:
+https://huncamper.github.io/packet-racer/

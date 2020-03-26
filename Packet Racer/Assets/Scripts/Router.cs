@@ -7,17 +7,29 @@ using System;
 
 public class Router : MonoBehaviour, IDevice
 {
+    /// <summary>
+    /// Name label above the router
+    /// </summary>
     public TextMeshPro labelName;
 
+    /// <summary>
+    /// A string based routing table list
+    /// </summary>
     public List<string> routingTableString = new List<string>();
 
-    // Device's display name
+    /// <summary>
+    /// Device's display name
+    /// </summary>
     public string displayName = "router";
 
-    // List of string based IPs as interfaces
+    /// <summary>
+    /// List of string based IPs as interfaces
+    /// </summary>
     public List<string> interfaceIpList = new List<string>();
 
-    // List of interfaces on the device
+    /// <summary>
+    /// List of interfaces on the device
+    /// </summary>
     public List<NetInterface> interfaceList = new List<NetInterface>();
 
     public bool ready = false;
@@ -50,7 +62,7 @@ public class Router : MonoBehaviour, IDevice
     }
 
     /// <summary>
-    /// Done preparing the router
+    /// Tells the router that it's ready and is properly deployed.
     /// </summary>
     public void Ready()
     {
@@ -101,6 +113,10 @@ public class Router : MonoBehaviour, IDevice
         }
     }
 
+    /// <summary>
+    /// Changes the name of the router
+    /// </summary>
+    /// <param name="name">Name to change to</param>
     public void SetName(string name)
     {
         labelName.text = name;
@@ -114,6 +130,10 @@ public class Router : MonoBehaviour, IDevice
         labelName.transform.LookAt(mainCamera.transform.position);
     }
 
+    /// <summary>
+    /// Sends a packet with a "ping" message
+    /// </summary>
+    /// <param name="ip">Destination IPv4</param>
     public void SendPingPacket(string ip)
     {
         NetInterface firstInterface = interfaceList[0];
@@ -125,6 +145,10 @@ public class Router : MonoBehaviour, IDevice
         SendPacket(newPacket);
     }
 
+    /// <summary>
+    /// Sends a packet through the router's first NetInterface
+    /// </summary>
+    /// <param name="packet">Packet</param>
     public void SendPacket(Packet packet)
     {
         NetInterface firstInterface = interfaceList[0];
@@ -133,6 +157,11 @@ public class Router : MonoBehaviour, IDevice
         firstInterface.SendPacket(packet);
     }
 
+    /// <summary>
+    /// Receive a packet and handle it
+    /// </summary>
+    /// <param name="sourceInterface">Interface the packet is coming from</param>
+    /// <param name="packet">Packet</param>
     public void ReceivePacket(NetInterface sourceInterface, Packet packet)
     {
         IPv4Address interfaceIP = sourceInterface.GetIPAddress();

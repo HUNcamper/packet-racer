@@ -115,6 +115,9 @@ public class Cable : MonoBehaviour
         }
     }
 
+    /// <summary>
+    /// Tells the cable that it's ready and is properly deployed.
+    /// </summary>
     public void Ready()
     {
         startInterface = startRouter.interfaceList[0];
@@ -130,6 +133,11 @@ public class Cable : MonoBehaviour
         ready = true;
     }
 
+    /// <summary>
+    /// Handles a received packet
+    /// </summary>
+    /// <param name="sourceInterface">Interface the packet is coming from</param>
+    /// <param name="packet">Packet</param>
     public void HandlePacket(NetInterface sourceInterface, Packet packet)
     {
         if (sourceInterface == startInterface)

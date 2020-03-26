@@ -6,12 +6,20 @@ namespace PacketRacer
 {
     public class Packet
     {
-        // Source IPv4
+        /// <summary>
+        /// Source IPv4 address
+        /// </summary>
         public IPv4Address source_ipv4;
 
-        // Destination IPv4
+        /// <summary>
+        /// Destination IPv4 address
+        /// </summary>
         public IPv4Address dest_ipv4;
 
+        // TODO: actual data for packet message
+        /// <summary>
+        /// Message in the packet
+        /// </summary>
         public string message = "";
 
         public Packet()
@@ -19,6 +27,12 @@ namespace PacketRacer
 
         }
 
+        /// <summary>
+        /// Initializes a Packet
+        /// </summary>
+        /// <param name="source_ip">Source IP in the packet</param>
+        /// <param name="dest_ip">Destination IP in the packet</param>
+        /// <param name="packetMessage">Message of the packet</param>
         public Packet(string source_ip, string dest_ip, string packetMessage = "ping")
         {
             source_ipv4 = new IPv4Address(source_ip);
@@ -27,6 +41,12 @@ namespace PacketRacer
             message = packetMessage;
         }
 
+        /// <summary>
+        /// Initializes a Packet
+        /// </summary>
+        /// <param name="source_ip">Source IP in the packet</param>
+        /// <param name="dest_ip">Destination IP in the packet</param>
+        /// <param name="packetMessage">Message of the packet</param>
         public Packet(IPv4Address source_ip, IPv4Address dest_ip, string packetMessage = "ping")
         {
             source_ipv4 = source_ip;

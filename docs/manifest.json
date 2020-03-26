@@ -1,0 +1,258 @@
+{
+  "homepages": [],
+  "source_base_path": "C:/Users/selik/Desktop/docfx/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PacketRacer.IDevice.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PacketRacer.IDevice.html",
+          "hash": "gWybp8PUamS56FI8B7Byrw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PacketRacer.IPv4Address.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PacketRacer.IPv4Address.html",
+          "hash": "a/SPrHczEEBFfxy67s7c8A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PacketRacer.IPv4Exception.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PacketRacer.IPv4Exception.html",
+          "hash": "J0VbNIv71yFR2vLOOXXdig=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PacketRacer.IPv4InterfaceException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PacketRacer.IPv4InterfaceException.html",
+          "hash": "42MyjL5HdSO1F7UOCl3ahA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PacketRacer.IPv4InterfacePair.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PacketRacer.IPv4InterfacePair.html",
+          "hash": "uIkgTaOPRSAiFq1xnPqG2g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PacketRacer.MACAddress.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PacketRacer.MACAddress.html",
+          "hash": "T/qnPJY9b0rwOpqv/1Zreg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PacketRacer.NetInterface.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PacketRacer.NetInterface.html",
+          "hash": "hNo59S9IuPnKporFgxgTgQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PacketRacer.Packet.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PacketRacer.Packet.html",
+          "hash": "srcXBKQhAu/LpXrERqg8+g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PacketRacer.ToolSelectDropdown.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PacketRacer.ToolSelectDropdown.html",
+          "hash": "2PqSWkrD0b//rknB6Vu67g=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PacketRacer.Tools.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PacketRacer.Tools.html",
+          "hash": "QPBdI5Slpjfxzw4h5bJKUQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/PacketRacer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/PacketRacer.html",
+          "hash": "oixFJbBEmYJMFNrSZy13vA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "LBwDWu0YrI6W04tW24VFBw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "xuOqeljlfto2ibEqjp+w1g=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "articles/intro.md",
+      "output": {
+        ".html": {
+          "relative_path": "articles/intro.html",
+          "hash": "droQ1YGY13rRVFm34mF+Bg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "articles/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "articles/toc.html",
+          "hash": "gB8AESyvNru97tzIZofEEg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "VYiUKU5iagbNYk1xry6ciQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "+rHUkRZHZRi5gd1aTU6lJA=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 3,
+          "skipped_file_count": 2
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 11,
+          "skipped_file_count": 11
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
